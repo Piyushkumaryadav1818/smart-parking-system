@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🎉 Booking Confirmed</h1>
+
+    <div class="container">
+        <h2>Your Parking Slot: {{slot}}</h2>
+
+        <p>Show this QR at the parking gate</p>
+
+        <img src="{{ url_for('static', filename='booking_qr.png') }}" width="200">
+
+        <br><br>
+
+        <a href="/cancel/{{slot}}">
+            <button style="background:#e74c3c;">Cancel Booking</button>
+        </a>
+
+        <br><br>
+
+        <a href="/slots">
+            <button>Back to Slots</button>
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Smart Parking System</h1>
+
+    <div class="container">
+        <h2>Payment Page</h2>
+        <h3>Selected Slot: {{slot}}</h3>
+
+        <p style="font-size:20px;"><b>Amount to Pay: ₹50</b></p>
+
+        <br>
+        <a href="/book/{{slot}}">
+            <button style="font-size:18px;">Pay Now</button>
+        </a>
+    </div>
+
+</body>
+</html>

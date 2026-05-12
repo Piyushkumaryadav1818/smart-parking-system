@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🛠 Admin Dashboard</h1>
+
+    <div class="container">
+        <h2>All Parking Bookings</h2>
+
+        {% for b in data %}
+            <p><b>User:</b> {{b[1]}} | <b>Slot:</b> {{b[2]}}</p>
+            <hr>
+        {% endfor %}
+
+        <br>
+        <a href="/">
+            <button>Go Home</button>
+        </a>
+    </div>
+
+</body>
+</html>

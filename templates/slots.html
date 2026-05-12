@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Slots</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Available Parking Slots</h1>
+
+<div class="slots">
+
+{% for s in slots %}
+    <div class="slot {% if s[2]=='Free' %}free{% else %}occupied{% endif %}">
+        <h3>Slot {{s[1]}}</h3>
+        <p>Status: {{s[2]}}</p>
+
+        {% if s[2] == "Free" %}
+            <a href="/pay/{{s[1]}}">
+                <button>Book Now</button>
+            </a>
+        {% else %}
+            <button disabled>Occupied</button>
+        {% endif %}
+    </div>
+{% endfor %}
+
+</div>
+
+<br>
+<a href="/">
+    <button>Home</button>
+</a>
+
+</body>
+</html>
